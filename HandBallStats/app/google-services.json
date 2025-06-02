@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "205685811411",
+    "project_id": "handballstats-storage",
+    "storage_bucket": "handballstats-storage.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:205685811411:android:b7c8f9a4257e278ec00c26",
+        "android_client_info": {
+          "package_name": "es.diego.handballstats"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvTexL3UrMmsrReWZXUBvx-os25sWd0iE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

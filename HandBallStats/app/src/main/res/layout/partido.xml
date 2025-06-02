@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:background="@color/fondo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:backgroundTint="@color/fondo"
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--Cabecera: marcador, tiempo, play, stop-->
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:backgroundTint="@color/fondo"
+            android:id="@+id/top_bar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="#EEE">
+
+            <ImageButton
+                android:id="@+id/btn_stats"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/logo_icon"
+                android:background="?android:selectableItemBackgroundBorderless"/>
+
+            <TextView
+                android:id="@+id/goles_favor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/secundario"
+                android:text="0"
+                android:layout_marginStart="20dp"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/guion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/secundario"
+                android:text=" - "
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/goles_contra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#F44336"
+                android:text="0"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="120dp"
+                android:layout_height="3dp"/>
+
+            <TextView
+                android:id="@+id/minutero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:text="00"
+                android:textSize="22sp"
+                android:textColor="#F44336"/>
+
+            <ImageButton
+                android:id="@+id/btn_play_pause"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/play"
+                android:background="?android:selectableItemBackgroundBorderless"
+                app:tint="@color/acciones" />
+
+            <ImageButton
+                android:id="@+id/btn_stop"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="15dp"
+                android:scaleType="centerCrop"
+                app:tint="#F44336"
+                android:src="@drawable/stop"
+                android:background="?android:selectableItemBackgroundBorderless"/>
+        </LinearLayout>
+
+        <!--Jugadores-->
+        <LinearLayout
+            android:id="@+id/field_layout"
+            android:layout_marginTop="15dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:background="@color/fondo"
+            android:padding="8dp"
+            app:layout_constraintTop_toBottomOf="@id/top_bar"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_buttons"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <!--Ataque-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="8dp"
+                    android:text="Ataque"
+                    android:textColor="@color/texto"
+                    android:textStyle="bold" />
+
+                <GridLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="37dp"
+                    android:id="@+id/ataque_grid"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:alignmentMode="alignMargins"
+                    android:backgroundTint="@color/fondo"
+                    android:columnCount="3"
+                    android:orientation="horizontal"
+                    android:padding="4dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="4dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/extremo_izq"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/circle_background" />
+
+                        <TextView
+                            android:id="@+id/extremo_izq_nombre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="extremo izq"
+                            android:textSize="10sp"
+                            android:textColor="@color/texto"
+                            android:gravity="center"
+                            android:paddingTop="2dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="4dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/pivote"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/circle_background" />
+
+                        <TextView
+                            android:id="@+id/pivote_nombre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="pivote"
+                            android:textSize="10sp"
+                            android:textColor="@color/texto"
+                            android:gravity="center"
+                            android:paddingTop="2dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="4dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/extremo_dch"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/circle_background" />
+
+                        <TextView
+                            android:id="@+id/extremo_dch_nombre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="extremo dch"
+                            android:textSize="10sp"
+                            android:textColor="@color/texto"
+                            android:gravity="center"
+                            android:paddingTop="2dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="4dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/lateral_izq"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/circle_background" />
+
+                        <TextView
+                            android:id="@+id/lateral_izq_nombre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="lateral izq"
+                            android:textSize="10sp"
+                            android:textColor="@color/texto"
+                            android:gravity="center"
+                            android:paddingTop="2dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="4dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/central"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/circle_background" />
+
+                        <TextView
+                            android:id="@+id/central_nombre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="central"
+                            android:textSize="10sp"
+                            android:textColor="@color/texto"
+                            android:gravity="center"
+                            android:paddingTop="2dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="4dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/lateral_dch"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/circle_background" />
+
+                        <TextView
+                            android:id="@+id/lateral_dch_nombre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="lateral dch"
+                            android:textSize="10sp"
+                            android:textColor="@color/texto"
+                            android:gravity="center"
+                            android:paddingTop="2dp"/>
+                    </LinearLayout>
+
+                </GridLayout>
+            </LinearLayout>
+
+            <!--Defensa-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="8dp"
+                    android:text="Defensa"
+                    android:textColor="@color/texto"
+                    android:textStyle="bold" />
+
+                <GridLayout
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/defensa_grid"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:alignmentMode="alignMargins"
+                    android:columnCount="6"
+                    android:orientation="horizontal"
+                    android:padding="4dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:layout_row="1"
+                        android:layout_column="0">
+
+                        <ImageView
+                            android:id="@+id/exterior_izq"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/circle_background" />
+
+                        <TextView
+                            android:id="@+id/exterior_izq_nombre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="exterior izq"
+                            android:textSize="10sp"
+                            android:textColor="@color/texto"
+                            android:gravity="center"
+                            android:paddingTop="2dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:layout_row="0"
+                        android:layout_column="0">
+
+                        <ImageView
+                            android:id="@+id/def_lateral_izq"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/circle_background" />
+
+                        <TextView
+                            android:id="@+id/def_lateral_izq_nombre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="lateral izq"
+                            android:textSize="10sp"
+                            android:textColor="@color/texto"
+                            android:gravity="center"
+                            android:paddingTop="2dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:layout_row="0"
+                        android:layout_column="1">
+
+                        <ImageView
+                            android:id="@+id/poste_izq"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/circle_background" />
+
+                        <TextView
+                            android:id="@+id/poste_izq_nombre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="poste izq"
+                            android:textSize="10sp"
+                            android:textColor="@color/texto"
+                            android:gravity="center"
+                            android:paddingTop="2dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:layout_row="0"
+                        android:layout_column="2">
+
+                        <ImageView
+                            android:id="@+id/poste_dch"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/circle_background" />
+
+                        <TextView
+                            android:id="@+id/poste_dch_nombre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="poste dch"
+                            android:textSize="10sp"
+                            android:textColor="@color/texto"
+                            android:gravity="center"
+                            android:paddingTop="2dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:layout_row="0"
+                        android:layout_column="3">
+
+                        <ImageView
+                            android:id="@+id/def_lateral_dch"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/circle_background" />
+
+                        <TextView
+                            android:id="@+id/def_lateral_dch_nombre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="lateral dch"
+                            android:textSize="10sp"
+                            android:textColor="@color/texto"
+                            android:gravity="center"
+                            android:paddingTop="2dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:layout_row="1"
+                        android:layout_column="3">
+
+                        <ImageView
+                            android:id="@+id/exterior_dch"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/circle_background" />
+
+                        <TextView
+                            android:id="@+id/exterior_dch_nombre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="exterior dch"
+                            android:textSize="10sp"
+                            android:textColor="@color/texto"
+                            android:gravity="center"
+                            android:paddingTop="2dp"/>
+                    </LinearLayout>
+
+                </GridLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--Botones-->
+        <GridLayout
+            android:id="@+id/bottom_buttons"
+            android:layout_width="418dp"
+            android:layout_height="243dp"
+            android:background="@color/fondo"
+            android:columnCount="2"
+            android:padding="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageButton
+                android:id="@+id/btn_ataque_bien"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:backgroundTint="@color/verde"
+                android:scaleType="centerInside"
+                android:src="@drawable/at_bien" />
+
+            <ImageButton
+                android:id="@+id/btn_ataque_mal"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:backgroundTint="@color/rojo"
+                android:scaleType="centerInside"
+                android:src="@drawable/at_mal" />
+
+            <ImageButton
+                android:id="@+id/btn_defensa_bien"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:backgroundTint="@color/verde"
+                android:scaleType="centerInside"
+                android:src="@drawable/def_bien" />
+
+            <ImageButton
+                android:id="@+id/btn_defensa_mal"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:backgroundTint="@color/rojo"
+                android:scaleType="centerInside"
+                android:src="@drawable/def_mal" />
+        </GridLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:background="@color/primario"
+        android:layout_height="match_parent"
+        android:layout_gravity="start">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="25dp"
+                android:text="Estadísticas del partido"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/texto"
+                android:paddingBottom="8dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_estadisticas"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="25dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </com.google.android.material.navigation.NavigationView>
+</androidx.drawerlayout.widget.DrawerLayout>

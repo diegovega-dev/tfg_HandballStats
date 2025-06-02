@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="@color/dialog">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/teamPhotoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Foto del Equipo"
+            android:textColor="@color/primario"
+            android:textSize="16sp"
+            android:paddingBottom="8dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true" />
+
+        <ImageButton
+            android:id="@+id/eliminarButton"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/basura"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            android:contentDescription="Eliminar"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            app:tint="@android:color/holo_red_light"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/teamPhotoImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:src="@drawable/proffile"
+        android:contentDescription="Foto del equipo"
+        android:layout_marginBottom="16dp" />
+
+    <EditText
+        android:id="@+id/teamNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre del Equipo"
+        android:textColorHint="#B1BB86FC"
+        android:textColor="@color/texto"
+        android:backgroundTint="@color/primario"
+        android:padding="12dp"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/teamCategoryEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Categoría"
+        android:textColorHint="#B1BB86FC"
+        android:textColor="@color/texto"
+        android:backgroundTint="@color/primario"
+        android:padding="12dp"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/saveTeamButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar Equipo"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/acciones"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>

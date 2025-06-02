@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/dialog"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <RadioGroup
+        android:id="@+id/radioGroupSanciones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/radio2Min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/texto"
+            app:buttonTint="@color/primario"
+            android:text="2 minutos" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/radioAmarilla"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/texto"
+            android:text="Amarilla"
+            app:buttonTint="#C3B31D" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/radioRoja"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/texto"
+            android:text="Roja"
+            app:buttonTint="#FF0000" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/radioAzul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/texto"
+            android:text="Azul"
+            app:buttonTint="#0000FF" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnAceptarSancion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Aceptar"
+        android:backgroundTint="@color/acciones"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvPartidosDefensa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Datos recaudados en X partidos"
+            android:textSize="16sp"
+            android:textColor="@color/texto"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="12dp">
+
+            <TextView
+                android:id="@+id/tvRobosLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Robos por partido"
+                android:textSize="14sp"
+                android:textColor="@color/texto"/>
+
+            <TextView
+                android:id="@+id/tvRobosValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/texto"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="12dp">
+
+            <TextView
+                android:id="@+id/tvBlocajesLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Blocajes por partido"
+                android:textSize="14sp"
+                android:textColor="@color/texto" />
+
+            <TextView
+                android:id="@+id/tvBlocajesValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/texto" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="12dp">
+
+            <TextView
+                android:id="@+id/tvPenaltisLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Penaltis provocados por partido"
+                android:textSize="14sp"
+                android:textColor="@color/texto" />
+
+            <TextView
+                android:id="@+id/tvPenaltisValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/texto" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+
+            <TextView
+                android:id="@+id/tvPorcentajeUxULabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Porcentaje 1vs1 ganados"
+                android:textSize="14sp"
+                android:textColor="@color/texto" />
+
+            <TextView
+                android:id="@+id/tvPorcentajeUxUValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0%"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/texto"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="2"
+            android:paddingTop="16dp">
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pieChartUxUBuenos"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp" />
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pieChartUxUMalos"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

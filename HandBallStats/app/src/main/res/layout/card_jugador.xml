@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="#AE8AB4F8">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/jugadorImageView"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_vertical"
+            android:scaleType="centerCrop"
+            android:background="@drawable/proffile_azul"
+            android:contentDescription="Foto del jugador" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingStart="16dp">
+
+            <TextView
+                android:id="@+id/jugadorNombreText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre del Jugador"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/texto" />
+
+            <TextView
+                android:id="@+id/jugadorAnioText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Año de nacimiento: 2005"
+                android:textSize="14sp"
+                android:textColor="#B6B6B6" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/dorsal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="dorsal: "
+            android:textSize="14sp"
+            android:textColor="#B6B6B6" />
+
+        <TextView
+            android:id="@+id/jugadorDorsalText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="44"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:layout_marginEnd="15dp"
+            android:textColor="@color/secundario" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

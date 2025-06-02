@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/loginLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    tools:context=".activities.LoginActivity"
+    android:background="@color/fondo">
+
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="80dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/logotfg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/loginFormLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="40dp"
+        app:layout_constraintTop_toBottomOf="@id/logoImageView"
+        app:layout_constraintBottom_toTopOf="@id/footerText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.4">
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:hint="Email"
+            android:textColorHint="#B1BB86FC"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/texto"
+            android:backgroundTint="@color/primario"
+            android:padding="12dp" />
+
+        <TextView
+            android:id="@+id/emailErrorTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_red_light"
+            android:text="Error en el email"
+            android:textSize="12sp"
+            android:visibility="gone"
+            android:paddingTop="4dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <EditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Contraseña"
+                android:textColorHint="#B1BB86FC"
+                android:inputType="textPassword"
+                android:textColor="@color/texto"
+                android:backgroundTint="@color/primario"
+                android:padding="12dp" />
+
+            <CheckBox
+                android:id="@+id/showPasswordCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mostrar"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/primario"
+                android:paddingEnd="8dp"
+                android:buttonTint="@color/primario" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/passwordErrorTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_red_light"
+            android:text="Error en la contraseña"
+            android:textSize="12sp"
+            android:visibility="gone"
+            android:paddingTop="4dp" />
+
+
+        <CheckBox
+            android:id="@+id/rememberMeCheckbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Mantener sesión iniciada"
+            android:textColor="@color/primario"
+            android:paddingEnd="12dp"
+            android:buttonTint="@color/primario"/>
+
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Iniciar sesión"
+            android:textColor="@color/fondo"
+            android:backgroundTint="@color/acciones"
+            android:padding="12dp"/>
+
+        <TextView
+            android:id="@+id/createAccountText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="¿No tienes cuenta aún?"
+            android:textColor="@color/secundario"
+            android:textStyle="bold"
+            android:paddingTop="12dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/footerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/yo"
+        android:textSize="12sp"
+        android:textColor="#888888"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

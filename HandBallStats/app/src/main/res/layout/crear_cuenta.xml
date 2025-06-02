@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="24dp"
+    android:background="@color/fondo"
+    tools:context=".activities.RegisterActivity">
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Atras"
+        android:scaleType="centerCrop"
+        android:src="@drawable/atras"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/acciones" />
+
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/logotfg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/registerFormLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="40dp"
+        app:layout_constraintTop_toBottomOf="@id/logoImageView"
+        app:layout_constraintBottom_toTopOf="@id/footerText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.4">
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre"
+            android:textColorHint="#B1BB86FC"
+            android:textColor="@color/texto"
+            android:padding="12dp"
+            android:layout_marginTop="12dp" />
+        <TextView
+            android:id="@+id/nameErrorText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="El nombre es obligatorio"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="12sp"
+            android:visibility="gone"
+            android:paddingTop="4dp" />
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:textColorHint="#B1BB86FC"
+            android:textColor="@color/texto"
+            android:padding="12dp" />
+        <TextView
+            android:id="@+id/emailErrorText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Correo inválido"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="12sp"
+            android:visibility="gone"
+            android:paddingTop="4dp" />
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:textColorHint="#B1BB86FC"
+            android:textColor="@color/texto"
+            android:padding="12dp"
+            android:layout_marginTop="12dp" />
+        <TextView
+            android:id="@+id/passwordErrorText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="La contraseña debe tener al menos 6 caracteres"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="12sp"
+            android:visibility="gone"
+            android:paddingTop="4dp" />
+
+        <EditText
+            android:id="@+id/repeatPasswordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Repetir contraseña"
+            android:inputType="textPassword"
+            android:textColorHint="#B1BB86FC"
+            android:textColor="@color/texto"
+            android:padding="12dp"
+            android:layout_marginTop="12dp" />
+        <TextView
+            android:id="@+id/repeatPasswordErrorText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Las contraseñas no coinciden"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="12sp"
+            android:visibility="gone"
+            android:paddingTop="4dp" />
+
+        <Button
+            android:id="@+id/createAccountButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Crear cuenta"
+            android:backgroundTint="@color/acciones"
+            android:textColor="@color/fondo"
+            android:layout_marginTop="20dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/footerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/yo"
+        android:textSize="12sp"
+        android:textColor="#888888"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

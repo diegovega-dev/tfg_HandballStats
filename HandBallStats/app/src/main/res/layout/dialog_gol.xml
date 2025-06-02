@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dialogLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/dialog"
+    android:padding="24dp">
+
+    <CheckBox
+        android:id="@+id/checkBoxContraataque"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Contraataque?"
+        android:buttonTint="@color/acciones"
+        android:textColor="@color/texto"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/texto"
+        android:text="¿Distancia?"
+        android:textStyle="bold"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroupDistancia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <RadioButton
+            android:id="@+id/radioDistancia6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/texto"
+            app:buttonTint="@color/acciones"
+            android:text="6m"
+            android:layout_marginEnd="30dp"/>
+
+        <RadioButton
+            android:id="@+id/radioDistancia9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:buttonTint="@color/acciones"
+            android:textColor="@color/texto"
+            android:layout_marginEnd="30dp"
+            android:text="9m" />
+
+        <RadioButton
+            android:id="@+id/radioDistancia7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/texto"
+            app:buttonTint="@color/acciones"
+            android:text="penalty" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/buttonAceptar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/acciones"
+        android:text="Aceptar" />
+</LinearLayout>

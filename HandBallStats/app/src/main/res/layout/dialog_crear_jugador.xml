@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="@color/dialog">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/playerPhotoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Foto del Jugador"
+            android:textColor="@color/primario"
+            android:textSize="16sp"
+            android:paddingBottom="8dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true" />
+
+        <ImageButton
+            android:id="@+id/eliminarButton"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/basura"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            android:contentDescription="Eliminar"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            app:tint="@android:color/holo_red_light" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/playerPhotoImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:src="@drawable/proffile_azul"
+        android:contentDescription="Foto del jugador"
+        android:layout_marginBottom="16dp" />
+
+    <EditText
+        android:id="@+id/playerNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre del Jugador"
+        android:textColorHint="#B1BB86FC"
+        android:textColor="@color/texto"
+        android:backgroundTint="@color/primario"
+        android:padding="12dp"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/playerBirthYearEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Año de Nacimiento"
+        android:textColorHint="#B1BB86FC"
+        android:textColor="@color/texto"
+        android:backgroundTint="@color/primario"
+        android:padding="12dp"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/playerDorsalEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Dorsal"
+        android:textColorHint="#B1BB86FC"
+        android:textColor="@color/texto"
+        android:backgroundTint="@color/primario"
+        android:padding="12dp"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/savePlayerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar Jugador"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/acciones"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>
